@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1e5039; /* Light pink background color */
+}
+
+::selection {
+    color: #fff;
+    background: #3c4e4e; /* Darker background color for selected text */
+}
+
+.wrapper {
+    width: 420px;
+    border-radius: 10px;
+    background: #397525; /* Light green background color */
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper header {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #121111; /* Dark gray text color */
+    margin-bottom: 20px;
+}
+
+.wrapper .search {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.search input {
+    height: 48px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 15px;
+    border: 2px solid #96c4b0; /* Light green border color */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search input:focus {
+    border: 2px solid #449c6e; /* Dark green border color on focus */
+    box-shadow: 0 0 10px rgba(68, 156, 110, 0.2); /* Light green box shadow on focus */
+}
+
+.search input::placeholder {
+    color: #b2b2b2; /* Light gray placeholder color */
+}
+
+.search i,
+.search span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f7f7f; /* Medium gray color */
+    cursor: pointer;
+}
+
+.search i {
+    left: 20px;
+    font-size: 18px;
+}
+
+.search span {
+    right: 20px;
+    font-size: 22px;
+    display: none;
+}
+
+.search input:valid~span {
+    display: block;
+}
+
+.wrapper .info-text {
+    font-size: 14px;
+    color: #0aba1e; /* Dark red text color */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.wrapper.active .info-text {
+    display: none;
+}
+
+.info-text span {
+    font-weight: 700;
+    color: #052414; /* Dark green color */
+}
+
+.wrapper ul {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.wrapper.active ul {
+    opacity: 1;
+    height: 303px;
+}
+
+.wrapper ul li {
+    display: flex;
+    list-style: none;
+    margin-bottom: 15px;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d9d9d9;
+    justify-content: space-between;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+ul .word p {
+    font-size: 24px;
+    font-weight: 700;
+    color: #070606; /* Dark text color for word search */
+}
+
+ul .word span {
+    font-size: 14px;
+    color: #c9cfc5; /* dull white color noun and adj */
+}
+
+ul .word i {
+    color: #242423; /* Medium gray color */
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul .content {
+    max-height: 215px;
+    overflow-y: auto;
+}
+
+ul .content::-webkit-scrollbar {
+    width: 5px;
+}
+
+ul .content::-webkit-scrollbar-thumb {
+    background-color: #449c6e; /* Dark green scrollbar color */
+    border-radius: 5px;
+}
+
+.content li .details {
+    padding-left: 15px;
+    border-left: 3px solid #091010; /* Dark blue border color */
+}
+
+.content li p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #232121; /* Dark text color for meaning */
+}
+
+.content li span {
+    font-size: 16px;
+    color: #bcc372; /* Light yellow color */
+}
+
+.content .synonyms .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.content .synonyms span {
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    background-color: #449c6e; /* Dark green background color */
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.content .synonyms span:hover {
+    background-color: #3c825f; /* Darker green on hover */
+}
